@@ -1,0 +1,12 @@
+if mpicc -o buffered_ping_pong buffered_ping_pong.c
+then
+	mpiexec -n 2 ./buffered_ping_pong
+fi
+mpicc -o ping_pong ping_pong.c
+
+echo ----------------------------------------
+
+if mpicc -o ping_pong ping_pong.c
+then
+	mpiexec -n 2 ./ping_pong
+fi

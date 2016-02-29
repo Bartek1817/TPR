@@ -1,0 +1,12 @@
+clear
+if mpicc -o token_ring token_ring.c
+then
+	mpiexec -n 10 ./token_ring
+fi
+echo -------------------------
+if mpicc -o synch_token_ring synch_token_ring.c
+then
+	mpiexec -n 10 ./synch_token_ring
+fi
+
+
